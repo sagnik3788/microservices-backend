@@ -1,27 +1,36 @@
-Food Delivery App Backend
-Overview
+# Food Delivery App Backend
+
+## Overview
+
 This project consists of three microservices for a food delivery app: User Service, Restaurant Service, and Delivery Agent Service.
 
-Microservices
-User Service
-Restaurant Service
-Delivery Agent Service
-Tech Stack
-Node.js
-JavaScript
-Docker
-Docker Compose
-PostgreSQL (for the database)
-Setup
-Prerequisites
-Docker
-Docker Compose
-Node.js
-Cloning the Repository
+## Microservices
+
+1. **User Service**
+2. **Restaurant Service**
+3. **Delivery Agent Service**
+
+## Tech Stack
+
+- **Node.js**
+- **JavaScript**
+- **Docker**
+- **Docker Compose**
+- **PostgreSQL** (for the database)
+
+## Prerequisites
+
+- Docker
+- Docker Compose
+- Node.js
+
+## Setup
+
+### Cloning the Repository
+
 Clone the repository:
 
-sh
-Copy code
+```sh
 git clone https://github.com/sagnik3788/microservices-backend.git
 cd microservices-backend/food-delivery-app
 Environment Variables
