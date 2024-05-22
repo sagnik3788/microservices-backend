@@ -13,6 +13,8 @@ services:
       - DB_PASS=Sagnik@09
       - DB_HOST=postgres
       - DB_PORT=5432
+    env_file:
+      - ./food-delivery-app/user-service/.env
 
   restaurant-service:
     build: ./food-delivery-app/restaurant-service
@@ -26,6 +28,8 @@ services:
       - DB_PASS=Sagnik@09
       - DB_HOST=postgres
       - DB_PORT=5432
+    env_file:
+      - ./food-delivery-app/restaurant-service/.env  
 
   delivery-agent-service:
     build: ./food-delivery-app/delivery-agent-service
@@ -39,12 +43,14 @@ services:
       - DB_PASS=Sagnik@09
       - DB_HOST=postgres
       - DB_PORT=5432
+    env_file:
+      - ./food-delivery-app/delivery-agent-service/.env  
 
   postgres:
     image: postgres:latest
     environment:
-      POSTGRES_USER: username
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Sagnik@09
       POSTGRES_DB: food_delivery
     ports:
       - "5432:5432"

@@ -1,5 +1,6 @@
 const express = require('express');
- const { User , Order, Rating } = require('../models');
+const axios= require("axios")
+ const { User , Order, Rating , Restaurant } = require('../models');
 
 const router = express.Router();
 
@@ -7,17 +8,26 @@ router.get('/', (req, res) => {
   res.send("user-service running");
 });
 
-// Retrieve all online restaurants
 router.get('/restaurants', async (req, res) => {
-  const restaurants = await Restaurant.findAll({ where: { isOnline: true } });
-  res.json(restaurants);
+  try {
+    const restaurants = await Restaurant.findAll({ where: { isOnline: true } });
+    res.json(restaurants);
+  } catch (error) {
+    console.error('Error retrieving restaurants:', error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 // Place an order
 router.post('/order', async (req, res) => {
-  const { userId, restaurantId, items } = req.body;
-  const order = await Order.create({ userId, restaurantId, items, status: 'Pending' });
-  res.status(201).json(order);
+  try {
+    const { userId, restaurantId, items } = req.body;
+    const order = await Order.create({ userId, restaurantId, items, status: 'Pending' });
+    res.status(201).json(order);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 // Leave a rating

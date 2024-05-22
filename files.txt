@@ -1,0 +1,35 @@
+food-delivery-app/
+├── user-service/
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Order.js
+│   │   ├── Rating.js
+│   ├── routes/
+│   │   ├── index.js
+│   ├── database.js
+│   ├── app.js
+│   ├── Dockerfile
+│   ├── package.json
+├── restaurant-service/
+│   ├── models/
+│   │   ├── Restaurant.js
+│   │   ├── Order.js
+│   │   ├── DeliveryAgent.js
+│   ├── routes/
+│   │   ├── index.js
+│   ├── database.js
+│   ├── app.js
+│   ├── Dockerfile
+│   ├── package.json
+├── delivery-agent-service/
+│   ├── models/
+│   │   ├── DeliveryAgent.js
+│   │   ├── Order.js
+│   ├── routes/
+│   │   ├── index.js
+│   ├── database.js
+│   ├── app.js
+│   ├── Dockerfile
+│   ├── package.json
+├── docker-compose.yml
+├── README.md
