@@ -1,10 +1,10 @@
 version: '3.8'
 
 services:
-  user-service:
-    build: ./food-delivery-app/user-service
+  restaurant-service:
+    build: ./food-delivery-app/restaurant-service
     ports:
-      - "3000:3000"
+      - "3000:3001"
     depends_on:
       - postgres
     environment:
@@ -14,7 +14,7 @@ services:
       - DB_HOST=postgres
       - DB_PORT=5432
     env_file:
-      - ./food-delivery-app/user-service/.env 
+      - ./food-delivery-app/restaurant-service/.env 
 
   postgres:
     image: postgres:latest
