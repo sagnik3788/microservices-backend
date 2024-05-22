@@ -3,6 +3,10 @@ const express = require('express');
 
 const router = express.Router();
 
+router.get('/', (req, res) => {
+  res.send("user-service running");
+});
+
 // Retrieve all online restaurants
 router.get('/restaurants', async (req, res) => {
   const restaurants = await Restaurant.findAll({ where: { isOnline: true } });
